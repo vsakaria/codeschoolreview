@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe School do
-
 	before do
 		@school = School.new({:name=>"Code School", :url=>"www.codeschool.com", :description => "Learn by Doing"})
 	end
@@ -22,3 +21,4 @@ describe School do
 		expect(@school.description).to eq("Learn by Doing")
 	end
 end
+

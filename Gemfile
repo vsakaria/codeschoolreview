@@ -24,6 +24,7 @@ group :development, :test do
 	gem 'guard-rspec'
 	gem 'guard-spork'
 	gem 'terminal-notifier-guard'
+	gem 'debugger'
 end
 
 group :test do

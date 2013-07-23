@@ -1,4 +1,12 @@
 Codeschoolreview::Application.routes.draw do
+
+  root :to => 'schools#index'
+
+  resources :schools
+
+  # match 'schools' => 'schools#index'
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

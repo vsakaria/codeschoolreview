@@ -1,0 +1,9 @@
+<h1>Add a new site</h1>
+
+<%= form_for @school do |f| %> 
+
+   	Site name: <%= f.text_field :name %>
+    Web URL: <%= f.text_field :url %>
+    Slogan: <%= f.text_field :description %>
+    Add Site: <%= f.submit "Add" %> 
+<% end %>

@@ -1,10 +1,17 @@
-<h1>Codesite Review</h1>
-<h2>Number of Codesites: <%=@schools.count%> </h2>
-<%= button_to "Add school:", new_school_path, :method => "get" %>
+<div>
+	<h1 class="main_title">Code Site Review</h1>
+</div>
+
+<div class="main_info">
+	<h2>Number of Codesites: <%=@schools.count%> </h2>
+	<h2>Number of Reviews: <%=@review_count%> </h2>
+	<%= button_to "Add school:", new_school_path, :method => "get" %>
+</div>
 
 <% @schools.each do |school| %>
-	<h3>------------</h3>
-	<h3><%= school.name %></h3>
-	<a href="http://<%=school.url%>"><%= school.url%></a>
-	<h3><%= school.description %></h3>
+	<div>
+		<h3><%= link_to school.name, school_path(school) %></h3>
+		<a href="http://<%=school.url%>" target="_blank"><%= school.url%></a>
+		<h3><%= school.description %></h3>
+	</div>
 <% end %>

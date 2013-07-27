@@ -1,0 +1,11 @@
+<% @reviews.each do |review| %>
+	<h3>------------</h3>
+	
+	<h3><%= review.title%></h3>
+	<h3><%= review.body%></h3>
+	<h3><%= review.rating %></h3>
+<% end %>
+
+
+
+<%= button_to "Publish Review:", new_school_review_path(@school), :method => "get" %>

@@ -2,7 +2,9 @@ Codeschoolreview::Application.routes.draw do
 
   root :to => 'schools#index'
 
-  resources :schools
+  resources :schools do
+    resources :reviews
+  end
 
   # match 'schools' => 'schools#index'
   

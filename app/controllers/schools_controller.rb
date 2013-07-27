@@ -1,6 +1,7 @@
 class SchoolsController < ApplicationController
 
 	def index
+		@review_count = Review.count
 		@schools = School.all
 	end
 
@@ -8,16 +9,15 @@ class SchoolsController < ApplicationController
 		@school = School.new
 	end
 
-	def create
-		@school = School.create(params[:school])
-		if @school.save
-			redirect_to schools_path
-		else
-			render :new
+	def creategit
+		@school = School.find(params[:id])
+		respond_to do |format|
+			format.html	
 		end
 	end
 
 	def show
+		@review = Review.new
 		@school = School.find(params[:id])
 
 		respond_to do |format|

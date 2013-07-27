@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+.main_title{ font-family: arial; font-size: 4em; }
+.main_info{ font-family: arial; font-size: 1em; }
+
+

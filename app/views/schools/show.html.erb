@@ -1,0 +1,23 @@
+<h1><%= @school.name %></h1>
+<a href="http://<%= @school.url %>" target="_blank"><%= @school.url%></a>
+<h3><%= @school.description %><h3>
+
+<% @school.reviews.each do |review| %>
+	<h3>------------</h3>
+	<h3><%= review.title%></h3>
+	<h3><%= review.body%></h3>
+	<h3><%= review.rating %></h3>
+<% end %>
+
+<!--Adding a review for a school -->
+<%= form_for [@school, @review] do |f| %> 
+
+   	Title: <%= f.text_field :title %>
+    Body: <%= f.text_field :body %>
+    Rating: <%= f.text_field :rating %>
+    Add Site: <%= f.submit "Publish your review" %> 
+
+<% end %>
+
+
+

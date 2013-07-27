@@ -12,7 +12,7 @@ class School < ActiveRecord::Base
 	has_many :reviews
 	
 	def format_attributes
-		self.description.capitalize!
+		self.description = self.description.capitalize
 		self.name = self.name.titleize
 	end
 end

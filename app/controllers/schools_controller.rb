@@ -9,16 +9,18 @@ class SchoolsController < ApplicationController
 		@school = School.new
 	end
 
-	def creategit
-		@school = School.find(params[:id])
-		respond_to do |format|
-			format.html	
+	def create
+		@school = School.create(params[:school])
+		if @school.save
+			redirect_to schools_path
+		else
+			render :new
 		end
 	end
 
 	def show
 		@review = Review.new
-		@school = School.find(params[:id])
+		get_school_by_id params[:id]
 
 		respond_to do |format|
 			format.html
@@ -27,6 +29,12 @@ class SchoolsController < ApplicationController
 	end
 
 	def destory
+	end
+
+	private
+
+	def get_school_by_id id
+		@school = School.find(id)
 	end
 end
 
